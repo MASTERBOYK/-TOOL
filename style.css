@@ -1,0 +1,181 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.container {
+    background-color: rgba(17, 17, 17, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+    border: 1px solid #ff0000;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h1, h2 {
+    text-shadow: 0 0 15px #ff0000;
+}
+
+.logo-text {
+    font-size: 2.5rem;
+    color: #ff0000;
+    margin-bottom: 5px;
+    letter-spacing: 3px;
+}
+
+h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.form-section {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 2px solid #ff0000;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+select:focus, input[type="text"]:focus {
+    box-shadow: 0 0 10px #ff0000;
+    border-color: #ff3333;
+}
+
+/* Glitch Button Styling */
+.glitch-btn {
+    position: relative;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #ff0000;
+    overflow: hidden;
+}
+
+.glitch-btn::before,
+.glitch-btn::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff0000;
+    color: #fff;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    transition: clip 0.3s ease;
+}
+
+.glitch-btn::after {
+    left: 2px;
+    text-shadow: -1px 0 #00ffea;
+    background: #000;
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch-btn::before {
+    left: -2px;
+    text-shadow: 1px 0 #ff33ff;
+    background: #000;
+    animation: glitch-anim2 3s infinite linear alternate-reverse;
+}
+
+.glitch-btn:hover::before,
+.glitch-btn:hover::after {
+    clip: rect(0, 900px, 100px, 0);
+}
+
+.glitch-btn:hover {
+    background-color: #cc0000;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(42px, 9999px, 44px, 0); }
+    5% { clip: rect(62px, 9999px, 83px, 0); }
+    10% { clip: rect(73px, 9999px, 12px, 0); }
+    15% { clip: rect(89px, 9999px, 95px, 0); }
+    20% { clip: rect(33px, 9999px, 60px, 0); }
+    /* More steps for a random-looking glitch */
+}
+
+@keyframes glitch-anim2 {
+    0% { clip: rect(10px, 9999px, 20px, 0); }
+    7% { clip: rect(30px, 9999px, 45px, 0); }
+    14% { clip: rect(65px, 9999px, 80px, 0); }
+    21% { clip: rect(50px, 9999px, 60px, 0); }
+    /* More steps */
+}
+
+
+/* Terminal-style link container */
+.terminal-link-container {
+    background-color: #000;
+    border: 1px solid #ff0000;
+    padding: 10px;
+    margin-top: 25px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.terminal-link-container p {
+    margin: 0;
+    font-size: 14px;
+    color: #ff0000;
+}
+
+.terminal-link {
+    color: #00ff00; /* Green color for the link */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.terminal-link:hover {
+    color: #00cc00;
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 20px;
+    color: #666;
+    font-size: 12px;
+}
